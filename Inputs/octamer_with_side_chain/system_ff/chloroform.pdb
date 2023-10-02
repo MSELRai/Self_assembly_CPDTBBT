@@ -1,0 +1,13 @@
+TITLE       Required
+REMARK   1 File created by GaussView 6.0.16
+HETATM    1  C1         0       0.000   0.000   0.452                            SlC1
+HETATM    2  H2         0       0.000   0.000   1.535                            SlH2
+HETATM    3 Cl3         0      -0.000   1.691  -0.083                           SlCl3
+HETATM    4 Cl4         0      -1.465  -0.846  -0.083                           SlCl4
+HETATM    5 Cl5         0       1.465  -0.846  -0.083                           SlCl5
+END
+CONECT    1    2    3    4    5
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1
+CONECT    5    1

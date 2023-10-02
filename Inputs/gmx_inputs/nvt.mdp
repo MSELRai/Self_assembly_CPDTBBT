@@ -1,0 +1,62 @@
+; we'll use the md integrator with 10000000 time steps (25 ns)
+integrator               = md
+nsteps                   = 12500000
+dt                       = 0.002
+
+;Output cntrol
+nstenergy                = 1000
+nstxout                  = 1000
+nstvout                  = 1000
+nstlog                   = 1000
+
+
+;Bond parameters
+continuation             = no                ; first dynamics run
+constraint_algorithm     = lincs             ; holonomic constraints
+constraints              = all-bonds         ; all bonds (even heavy atom-H bonds) constrained
+lincs_iter               = 2                 ; accuracy of LINCS
+lincs_order              = 4                 ; also related to accuracy
+lincs-warnangle          = 90                ; warning after rotating the bond
+
+;Neighbour searching 
+cutoff-scheme            = Verlet
+ns_type                  = grid              ; search neighboring grid cels
+nstlist                  = 20                ; 10 fs
+rlist                    = 1.4
+
+;Electrostatic
+coulombtype              = PME               ; Particle Mesh Ewald for long-range electrostatics
+pme_order                = 4                 ; cubic interpolation
+fourierspacing           = 0.16              ; grid spacing for FFT
+rcoulomb                 = 1.4               ; short-range electrostatic cutoff (in nm)
+
+;Van dar Waals Interaction
+vdw-type                 = cut-off
+rvdw                     = 1.4               ; short-range van der Waals cutoff (in nm)
+verlet-buffer-tolerance  = 0.0001
+
+
+;Temperature Settings
+tcoupl                   = v-rescale
+tc-grps                  = system
+tau-t                    = 2
+ref-t                    = 298.15
+
+;Pressure Settings
+pcoupl                   = no   
+
+;Generate initial velocities
+gen-vel                  = yes
+gen-temp                 = 298.15
+gen_seed                 = -1
+
+;Periodic boundary conditions
+pbc                      = xyz               ; 3-D PBC
+
+; COM motion removal
+nstcomm                  = 100
+comm-mode                = Linear
+comm-grps                = system
+
+; Dispersion correction
+DispCorr                 = EnerPres          ; account for cut-off vdW scheme   

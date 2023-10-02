@@ -1,0 +1,29 @@
+[moleculetype]
+; molname        nrexcl
+CHCL3            3   
+
+[atoms]    ;nAtoms: 5
+;  id  type resnr resname    name   cgnr    charge
+    1  SLC1   1   CHCL3        C1      1    0.045134
+    2  SLH2   1   CHCL3        H2      2    0.134634
+    3  SLCL3  1   CHCL3       Cl3      3   -0.059922
+    4  SLCL4  1   CHCL3       Cl4      4   -0.059923
+    5  SLCL5  1   CHCL3       Cl5      5   -0.059923
+
+
+[bonds]    ;nBonds: 4
+;   i    j   funct
+    1    2    1
+    1    3    1
+    1    4    1
+    1    5    1
+
+
+[angles]    ;nAngles: 6
+;   i    j    k  funct
+    2    1    3   1
+    2    1    4   1
+    2    1    5   1
+    3    1    4   1
+    3    1    5   1
+    4    1    5   1

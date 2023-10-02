@@ -1,0 +1,14 @@
+; Include forcefield parameters
+#include "./system_ff/forcefield.itp"
+#include "./system_ff/cpdtbbt_8mer.itp"
+#include "./system_ff/chloroform.itp"
+
+[system]
+;name
+cpdtbbt_octamer
+
+
+[molecules]
+; Compound        #mols
+DA8               50
+CHCL3             40000
